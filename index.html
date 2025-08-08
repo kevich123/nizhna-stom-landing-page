@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ніжна стоматологія – брекети та елайнери</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS for map -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+XNF9QNW7nUa0Gk0GmAU7AeWKRQfOZCRYe40xnwYg="
+    crossorigin=""
+  />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1>Ніжна стоматологія</h1>
+      <nav>
+        <a href="#about">Про нас</a>
+        <a href="#services">Послуги</a>
+        <a href="#prices">Ціни</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Професійна ортодонтія у Києві</h2>
+      <p>Подаруйте собі ідеальну усмішку – брекети та елайнери для дорослих та дітей.</p>
+      <a href="#contact" class="btn">Записатися на консультацію</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Чому ми</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Досвідчені ортодонти</h3>
+          <p>Наші лікарі мають багаторічний досвід та постійно підвищують кваліфікацію.</p>
+        </div>
+        <div class="feature">
+          <h3>Сучасне обладнання</h3>
+          <p>Використовуємо новітні технології та матеріали для якісного лікування.</p>
+        </div>
+        <div class="feature">
+          <h3>Комфорт та турбота</h3>
+          <p>Ми робимо все, щоб ваш візит був максимально комфортним.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Наші послуги</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Металеві брекети</h3>
+          <p>Класичний та доступний варіант вирівнювання зубів. Підходить для більшості випадків.</p>
+        </div>
+        <div class="service-item">
+          <h3>Самолігуючі брекети</h3>
+          <p>Сучасні системи без еластиків для більш швидкого та комфортного лікування.</p>
+        </div>
+        <div class="service-item">
+          <h3>Елайнери</h3>
+          <p>Практично невидимі та знімні капи. Ідеальні для тих, хто хоче максимальний комфорт та естетику.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" class="prices">
+    <div class="container">
+      <h2>Ціни</h2>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Послуга</th>
+            <th>Вартість</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Консультація</td>
+            <td>500&nbsp;грн</td>
+          </tr>
+          <tr>
+            <td>Металеві брекети (за щелепу)</td>
+            <td>11&nbsp;000&nbsp;грн</td>
+          </tr>
+          <tr>
+            <td>Самолігуючі брекети (за щелепу)</td>
+            <td>20&nbsp;000&nbsp;грн</td>
+          </tr>
+          <tr>
+            <td>Елайнери</td>
+            <td>від 500&nbsp;USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Запис на консультацію</h2>
+      <p>Заповніть форму, і ми зв’яжемося з вами найближчим часом.</p>
+      <form action="mailto:clinic@example.com" method="post" enctype="text/plain" class="contact-form">
+        <label for="name">Ім’я</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Телефон або email</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit" class="btn">Відправити</button>
+      </form>
+      <div class="map-container">
+        <h3>Де ми знаходимося</h3>
+        <div id="map"></div>
+        <p>Київ, вул. Єжи Ґедройця 6</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Ніжна стоматологія. Усі права захищено.</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for map -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-XQoYMqMTK8LvdlDXvXO1ybY+6j9e2Rhr6Ikyam+Y0xo="
+    crossorigin=""
+  ></script>
+  <script src="script.js"></script>
+</body>
+</html>
