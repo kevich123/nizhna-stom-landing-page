@@ -32,7 +32,9 @@ body {
 }
 
 .header nav {
-  display: flex;
+  /* Сховати стандартний nav, оскільки навігаційні посилання тепер обгорнуті класом .nav-links.
+     Виведення у десктопній версії регулюється через .nav-links. */
+  display: none;
   gap: 15px;
   margin-top: 5px;
 }
@@ -105,6 +107,22 @@ body {
   }
 }
 
+/* Перекриваємо відображення навігації для різних розмірів екрана */
+@media (min-width: 769px) {
+  #nav-links {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav-links {
+    display: none !important;
+  }
+  #nav-links.open {
+    display: flex !important;
+  }
+}
+
 /* Стилі для посилань у навігації */
 .nav-links a {
   color: #333;
@@ -172,16 +190,28 @@ body {
 .about .feature,
 .service-item {
   flex: 1 1 30%;
-  background: #fafafa;
+  /* Світлий фон для картки переваг / послуги */
+  background: #e9f4ff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .about .feature h3,
 .service-item h3 {
   margin-bottom: 10px;
   font-size: 1.4rem;
+}
+
+/* Іконки у секції "Чому ми" */
+.feature .icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #0077cc;
 }
 
 /* Prices */
@@ -289,6 +319,18 @@ body {
   }
 }
 
+/* Обмежуємо висоту слайдера на великих екранах */
+@media (min-width: 992px) {
+  .slider {
+    /* Зменшуємо висоту слайдера на десктопах, щоб слайди були компактнішими */
+    max-height: 400px;
+  }
+  .slide {
+    max-height: 400px;
+    object-fit: contain;
+  }
+}
+
 #map {
   width: 100%;
   height: 300px;
@@ -329,13 +371,20 @@ body {
   gap: 20px;
   margin-top: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .doctor .doctor-images img {
-  flex: 1 1 45%;
+  flex: 0 1 80%;
   max-width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .doctor .doctor-images img {
+    flex-basis: 100%;
+  }
 }
 
 /* Office section styles */
@@ -361,4 +410,32 @@ body {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Reviews section */
+.reviews {
+  padding: 60px 0;
+  /* Світлий фон для блоку відгуків */
+  background: #e9f4ff;
+}
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.review {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  /* Акцентна лінія зліва для підкреслення відгуку */
+  border-left: 4px solid #0077cc;
+}
+.review p {
+  margin-bottom: 0;
 }
