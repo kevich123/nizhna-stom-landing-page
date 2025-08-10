@@ -209,9 +209,17 @@ body {
 
 /* Іконки у секції "Чому ми" */
 .feature .icon {
-  font-size: 3rem;
+  /* Окрема іконка в кольоровому колі для більш преміального вигляду */
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0077cc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
-  color: #0077cc;
 }
 
 /* Prices */
@@ -323,10 +331,10 @@ body {
 @media (min-width: 992px) {
   .slider {
     /* Зменшуємо висоту слайдера на десктопах, щоб слайди були компактнішими */
-    max-height: 400px;
+    max-height: 350px;
   }
   .slide {
-    max-height: 400px;
+    max-height: 350px;
     object-fit: contain;
   }
 }
@@ -388,16 +396,7 @@ body {
 }
 
 /* Office section styles */
-.office {
-  padding: 60px 0;
-}
-
-.office .office-img {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+/* Колишні стилі офісу видалено – фото кабінету використано як фон для секції технологій */
 
 /* Instagram section styles */
 .instagram {
@@ -438,4 +437,98 @@ body {
 }
 .review p {
   margin-bottom: 0;
+}
+
+/* ========================= */
+/* Секція «Брекети та технології» */
+/* ========================= */
+.technology {
+  padding: 80px 0;
+  /* Використовуємо фото кабінету як м'який фон з білим напівпрозорим шаром */
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/site_photos/office.jpg') center/cover fixed;
+}
+.technology h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+.technology .tech-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #444;
+}
+.tech-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.tech-card {
+  flex: 1 1 30%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 20px;
+}
+.tech-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.tech-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #0077cc;
+}
+.tech-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .tech-card {
+    flex: 1 1 100%;
+  }
+  .tech-card img {
+    height: 180px;
+  }
+}
+
+/* Секція цін: стилізація списку категорій */
+.price-categories details {
+  margin-bottom: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+}
+.price-categories summary {
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+.price-categories summary::-webkit-details-marker {
+  display: none;
+}
+.price-categories ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+.price-categories li {
+  margin-bottom: 5px;
+}
+
+/* Адаптивність карток «Чому ми» та «Послуги» на телефонах */
+@media (max-width: 768px) {
+  .about .feature,
+  .service-item {
+    flex: 1 1 100%;
+  }
 }
