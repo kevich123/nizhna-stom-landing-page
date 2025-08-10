@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Basic SEO meta tags -->
+  <meta name="description" content="Ніжна стоматологія – спеціалізована ортодонтична клініка у Києві. Пропонуємо металеві та самолігуючі брекети, елайнери та інші послуги. Професійний підхід і сучасне обладнання для вашої ідеальної усмішки.">
   <title>Ніжна стоматологія – брекети та елайнери</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Leaflet CSS for map -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-sA+XNF9QNW7nUa0Gk0GmAU7AeWKRQfOZCRYe40xnwYg="
-    crossorigin=""
-  />
 </head>
 <body>
 
@@ -22,7 +17,8 @@
         <img src="images/site_photos/logo_small.png" alt="Ніжна стоматологія логотип">
       </div>
       <h1>Ніжна стоматологія</h1>
-      <nav>
+      <!-- Навігація. На мобільних буде схована за бургер‑меню -->
+      <nav id="nav-links" class="nav-links">
         <a href="#about">Про нас</a>
         <a href="#services">Послуги</a>
         <a href="#doctor">Лікар</a>
@@ -32,6 +28,12 @@
         <a href="#instagram">Instagram</a>
         <a href="#contact">Контакти</a>
       </nav>
+      <!-- Кнопка бургер‑меню для мобільних пристроїв -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Перемкнути навігацію">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -87,10 +89,11 @@
   <section id="doctor" class="doctor">
     <div class="container">
       <h2>Наш лікар</h2>
-      <p>Наш провідний лікар‑ортодонт має понад 10 років досвіду і допоміг сотням пацієнтів отримати здорову та красиву усмішку. Ми поєднуємо турботу, професіоналізм та сучасні методики.</p>
+      <h3>Светлана Пшесмицька</h3>
+      <p>Светлана Пшесмицька – головний лікар‑ортодонт нашої клініки. Вона понад десять років дарує пацієнтам здорові та красиві посмішки, застосовуючи сучасні методики та індивідуальний підхід. Її професіоналізм і турбота допомогли сотням людей досягти впевненості в собі.</p>
       <div class="doctor-images">
-        <img src="images/site_photos/doctor_main2.jpg" alt="Лікар фото 1">
-        <img src="images/site_photos/doctor_main3.jpg" alt="Лікар фото 2">
+        <img src="images/site_photos/doctor_main2.jpg" alt="Лікар Светлана Пшесмицька з пацієнтом 1">
+        <img src="images/site_photos/doctor_main3.jpg" alt="Лікар Светлана Пшесмицька з пацієнтом 2">
       </div>
     </div>
   </section>
@@ -136,40 +139,45 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- Gallery Section with slider -->
   <section id="gallery" class="gallery">
     <div class="container">
       <h2>Галерея робіт</h2>
       <p>Погляньте на результати нашої роботи та атмосферу клініки.</p>
-      <div class="gallery-grid">
-        <!-- Додаємо усі фото з папки Site до галереї -->
-        <img src="images/site_photos/Image00001.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00002.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00003.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00004.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00005.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00006.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00010.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00011.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00012.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00013.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00014.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00015.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00016.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00017.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00018.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00019.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00020.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00021.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00023.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00024.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00025.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00026.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00027.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00028.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00029.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00030.jpg" alt="Фото роботи">
-        <img src="images/site_photos/Image00031.jpg" alt="Фото роботи">
+      <div class="slider">
+        <!-- Кнопки навігації для слайдера -->
+        <button class="slider-btn prev" aria-label="Попереднє фото">&#8249;</button>
+        <div class="slides">
+          <!-- Додаємо усі фото з папки Site до слайдера -->
+          <img src="images/site_photos/Image00001.jpg" alt="Робота 1" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00002.jpg" alt="Робота 2" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00003.jpg" alt="Робота 3" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00004.jpg" alt="Робота 4" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00005.jpg" alt="Робота 5" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00006.jpg" alt="Робота 6" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00010.jpg" alt="Робота 7" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00011.jpg" alt="Робота 8" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00012.jpg" alt="Робота 9" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00013.jpg" alt="Робота 10" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00014.jpg" alt="Робота 11" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00015.jpg" alt="Робота 12" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00016.jpg" alt="Робота 13" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00017.jpg" alt="Робота 14" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00018.jpg" alt="Робота 15" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00019.jpg" alt="Робота 16" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00020.jpg" alt="Робота 17" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00021.jpg" alt="Робота 18" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00023.jpg" alt="Робота 19" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00024.jpg" alt="Робота 20" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00025.jpg" alt="Робота 21" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00026.jpg" alt="Робота 22" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00027.jpg" alt="Робота 23" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00028.jpg" alt="Робота 24" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00029.jpg" alt="Робота 25" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00030.jpg" alt="Робота 26" class="slide" loading="lazy">
+          <img src="images/site_photos/Image00031.jpg" alt="Робота 27" class="slide" loading="lazy">
+        </div>
+        <button class="slider-btn next" aria-label="Наступне фото">&#8250;</button>
       </div>
     </div>
   </section>
@@ -192,7 +200,7 @@
     <div class="container">
       <h2>Запис на консультацію</h2>
       <p>Заповніть форму, і ми зв’яжемося з вами найближчим часом.</p>
-      <form action="mailto:clinic@example.com" method="post" enctype="text/plain" class="contact-form">
+      <form action="mailto:zeverseen@gmail.com" method="post" enctype="text/plain" class="contact-form">
         <label for="name">Ім’я</label>
         <input type="text" id="name" name="name" required>
 
@@ -206,8 +214,9 @@
       </form>
       <div class="map-container">
         <h3>Де ми знаходимося</h3>
-        <div id="map"></div>
-        <p>Київ, вул. Єжи Ґедройця 6</p>
+        <!-- Вбудована Google-карта -->
+        <iframe src="https://maps.google.com/maps?q=50.4198,30.5231&amp;z=16&amp;output=embed" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+        <p>Київ, вул. Єжи Ґедройця 6</p>
       </div>
     </div>
   </section>
@@ -218,12 +227,6 @@
     </div>
   </footer>
 
-  <!-- Leaflet JS for map -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-XQoYMqMTK8LvdlDXvXO1ybY+6j9e2Rhr6Ikyam+Y0xo="
-    crossorigin=""
-  ></script>
   <script src="script.js"></script>
 </body>
 </html>

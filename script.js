@@ -1,16 +1,47 @@
-// Initialize Leaflet map once the page has loaded
-window.addEventListener('load', function () {
-  // Coordinates for вул. Єжи Ґедройця 6, Київ
-  var coords = [50.4198, 30.5231];
-  var map = L.map('map').setView(coords, 17);
+// Основні скрипти сайту
+// Після завантаження DOM ініціалізуємо навігацію та слайдер
+document.addEventListener('DOMContentLoaded', () => {
+  /* ======= Бургер‑меню ======= */
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+  }
 
-  // Add OpenStreetMap tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
+  /* ======= Слайдер галереї ======= */
+  const slidesContainer = document.querySelector('.slides');
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.slider-btn.next');
+  const prevBtn = document.querySelector('.slider-btn.prev');
+  let currentSlide = 0;
 
-  // Add a marker with a popup
-  var marker = L.marker(coords).addTo(map);
-  marker.bindPopup('Ніжна стоматологія<br>Київ, вул. Єжи Ґедройця 6');
+  // Функція для оновлення положення слайдів
+  function updateSlider() {
+    const offset = -currentSlide * 100;
+    if (slidesContainer) {
+      slidesContainer.style.transform = `translateX(${offset}%)`;
+    }
+  }
+
+  // Перехід до наступного слайда
+  function goNext() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+  }
+
+  // Перехід до попереднього слайда
+  function goPrev() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  // Призначаємо обробники подій на кнопки
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  if (prevBtn) prevBtn.addEventListener('click', goPrev);
+
+  // Ініціалізуємо слайдер при завантаженні
+  updateSlider();
 });
